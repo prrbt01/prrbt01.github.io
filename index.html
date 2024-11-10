@@ -116,7 +116,7 @@
             </ul>
         </div>
 
-        <form action="send_email.php" method="post" class="feedback-form">
+        <form onsubmit="sendEmail(event)" class="feedback-form">
             <h2 class="form-title">Обратная связь</h2>
             <input type="text" id="name" name="name" placeholder="Имя" required>
             <input type="email" id="email" name="email" placeholder="Почта" required>
