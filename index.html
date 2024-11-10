@@ -138,3 +138,15 @@
 
 </body>
 </html>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+function sendEmail(e) {
+	e.preventDefault();
+    emailjs.sendForm('service_iaxabwf', 'template_nb6rvwk', e.target)
+    .then((result) => {
+        alert('Сообщение отправлено успешно!');
+    }, (error) => {
+        alert('Ошибка при отправке сообщения');
+    });
+}
+</script>
