@@ -8,9 +8,8 @@
     <link rel="icon" href="favicon_rbt.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-	<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-	<script>emailjs.init("service_iaxabwf");
-</script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script type="text/javascript">emailjs.init('iwDeETNr74wRgR8My')</script>
 </head>
 <body>
 
@@ -121,11 +120,10 @@
             </ul>
         </div>
 
-        <form onsubmit="sendEmail(event)" class="feedback-form">
+        <form class="feedback-form" id="form">
             <h2 class="form-title">Обратная связь</h2>
             <input type="text" id="name" name="name" placeholder="Имя" required>
-            <input type="email" id="email" name="email" placeholder="Почта" required>
-            <input type="tel" id="phone" name="phone" placeholder="Телефон" required pattern="\+?[0-9 -]{9,15}">
+            <input type="tel" id="phone" name="phone" placeholder="Телефон" required pattern="^\+?[\d\s-]{1,15}$">
             <textarea id="message" name="message" placeholder="Ваш вопрос" required></textarea>
             <input type="submit" value="Отправить">
         </form>
@@ -142,15 +140,20 @@
 </footer>
 
 </body>
-<script>
-function sendEmail(e) {
-	e.preventDefault();
-    emailjs.send('service_iaxabwf', 'template_nb6rvwk')
-    .then((result) => {
-        alert('Сообщение отправлено успешно!');
-    }, (error) => {
-        alert('Ошибка при отправке сообщения');
+<script type="text/javascript">
+document.getElementById('form').addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   const serviceID = 'service_iaxabwf';
+   const templateID = 'template_nb6rvwk';
+   
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      alert('Отправлено');
+      this.reset();
+    }, (err) => {
+      alert('Ошибка, позвоните нам по телефону');
     });
-}
+});
 </script>
 </html>
