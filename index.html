@@ -43,16 +43,16 @@
         </button>
     </div>
     <div class="image-section">
-        <img src="рембыттехника лого.jpg" alt="Descriptive text about the image">
+        <img src="Рембыттехника пружаны.jpg" alt="Магазин техники, ремонт холодильников">
     </div>
 </div>
     
 <div class="quote-section">
-    <img src="rembyttechnika_o_nas.jpg" alt="О компании ремббыттехника Пружаны" class="quote-image">
+    <img src="Рембыттехника - О нас.jpg" alt="О компании ремббыттехника Пружаны" class="quote-image">
     <div class="quote-icon-left">“</div>
     <p class="quote-text">
         <span class="quote-title">О нас</span><br>
-        Мы специализируемся на ремонте и обслуживании бытовой техники. Наша команда опытных специалистов готова предложить качественное обслуживание и поддержку для ваших домашних устройств.
+        Наше предприятие берет свое начало с 1987 года. «Рембыттехника» оказывала услуги по ремонту телевизионной и бытовой техники. В 2004 году предприятие стало частным. Произведен капитальный ремонт, реорганизация автопарка и мастерских. Все эти 37 лет! мы являемся авторизованным <a href="https://atlant.by/support/services/2568-p" id="serlink" target="_blank">сервисным центром</a> Минского завода Атлант.
     </p>
     <div class="quote-icon-right">”</div>
 </div>
@@ -69,12 +69,12 @@
     
     <div class="tags">
         <span class="tag">Телевизоры</span>
-        <span class="tag">СВЧ печи</span>
+        <span class="tag">Запчасти</span>
         <span class="tag">Пылесосы</span>
         <span class="tag">Чайники</span>
         <span class="tag">Утюги</span>
         <span class="tag">Телефоны</span>
-        <span class="tag">Планшеты</span>
+        <span class="tag">Микроволновки</span>
         <span class="tag">Зарядки</span>
         <span class="tag">Наушники</span>
         <span class="tag">Динамики</span>
@@ -103,9 +103,11 @@
     <div class="contacts-container">
         <div class="contact-info" itemscope itemtype="http://schema.org/Organization">
             <h2>Свяжитесь с нами</h2>
-            <p>📞 Телефон: 
-                <a href="tel:+375295090018" itemprop="telephone">+375(29)509-00-18</a>
-            </p>
+            <p>📞 Телефоны:</p>
+				<ul class="phone-numbers">
+    				<li><a href="tel:+375295090018" itemprop="telephone">Моб: +375(29)509-00-18</a></li>
+    				<li><a href="tel:+375163290087" itemprop="telephone">Город: 8016 32 90-087</a></li>
+				</ul>
             <p>📍 Адрес: 
                 <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
                 <span itemprop="streetAddress">ул. Свободы 50</span>, 
@@ -140,11 +142,10 @@
 </footer>
 
 </body>
-</html>
 <script>
 function sendEmail(e) {
 	e.preventDefault();
-    emailjs.sendForm('service_iaxabwf', 'template_nb6rvwk', e.target)
+    emailjs.send('service_iaxabwf', 'template_nb6rvwk')
     .then((result) => {
         alert('Сообщение отправлено успешно!');
     }, (error) => {
@@ -152,3 +153,4 @@ function sendEmail(e) {
     });
 }
 </script>
+</html>
